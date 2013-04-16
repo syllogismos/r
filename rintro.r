@@ -4,6 +4,7 @@ length(x);
 min(x);
 max(x);
 mean(x);
+fivenum(x); # min, lower hinge, median, upper hinge, max
 sd(x);
 var(x);
 y = 2 *x + 1;
@@ -143,5 +144,56 @@ View(object);
 edit(object); # for viewing and editing in inbuild data viewer and editor of r
 
 xnew <- edit(data.frame()); # to enter new data via spreadsheet interface
-:
+
+# probability distributions
+
+# functions for cumulative dist, probability density and the quantile function and to simulate the form of the distribution
+
+beta    #beta
+binom   #binomial
+cauchy  #Cauchy
+chisq   #chi-squared
+exp     #exponential
+f       #F
+gamma   #gamma
+geom    #geometric
+hyper   #hypergeometric
+lnorm   #log-normal
+logis   #logistic
+nbinom  #negative binomial
+norm    #normal
+pois    #Poisson
+signrank#signed rank
+unif    #uniform
+weibull #weibull
+wilcox  #Wilcoxon
+t       #Students t
+
+# prefix the names with 'd' for density and 'p' for the CDF, and 'q' for quantilee function and 'r' for simulation (random deviates)
+
+# use package SuppDists for more distributions
+
+
+attach(faithful);
+summary(eruptions);
+density(eruptions);
+fivenum(eruptions);
+stem(eruptions);
+hist(eruptions)
+hist(eruptions, seq(1.6, 5.2, 0.2), prob=TRUE);
+lines(density(eruptions, bw=0.1))
+rug(eruptions);
+ecdf(eruptions);
+
+long <- eruptions[eruptions>3]
+plot(ecdf(long), do.points = FALSE, verticals=TRUE)
+x <- seq(3, 5.4, 0.01)
+lines(x, pnorm(x, mean = mean(long), sd = sd(var)), lty = 3);
+par(pty = "s") # arrange for a square figure region
+qqnorm(long); qqline(long);
+shapiro.test(long);
+boxplot(A, B);
+t.test(A, B);
+wilcox.test(A, B);
+
 
