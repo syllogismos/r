@@ -134,4 +134,14 @@ cut()
 
 
 # reading data from files
+# i normally use rstudio so importing data from files is done through gui
+read.table("houses.data", header=TRUE);
+scan()
+
+data(); data("iris"); # use data to load available data sets into r env
+View(object); 
+edit(object); # for viewing and editing in inbuild data viewer and editor of r
+
+xnew <- edit(data.frame()); # to enter new data via spreadsheet interface
+:
 
