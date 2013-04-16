@@ -197,3 +197,92 @@ t.test(A, B);
 wilcox.test(A, B);
 
 
+
+
+# Grouping, loops and conditional execution
+ifelse(conditional, a, b) # returns vector of length longest among a, b.. a[i] if conditional[i] is true else b[i]
+
+if (expr_1) expr_2 else expr_3
+
+for (name in expr_1) expr_2
+
+repeat expr
+while (conditional) expr
+break
+next
+
+
+# writing functions
+name <- function(arg_1, arg_2, ...) expression
+
+twosam <- function(y1, y2) {
+    n1 <- length(y1); n2 <- length(y2)
+    yb1 <- mean(y1); yb2 <- mean(y2)
+    s1 <- var(y1); s2 <- var(y2)
+    s <- ((n1-1)*s1 + (n-1)*s2)/(n1+n2-2)
+    tst <- (yb1 -yb2)/sqrt(s*(1/n1 + 1/n2))
+    tst
+
+}
+
+tstat <- twosam(data$male, data$female0; tstat
+
+
+#customizing env, .First .Last
+
+
+# statistical models in R
+# suppose y, x, x0, x1, x2, .. are numerical variables, X is a matrix and A, B, C are factors.
+
+y ~ x
+y ~ 1+x # simple linear regression model of y on x.  both represent the same
+
+y ~ 0 + x
+y ~ -1 + x
+y ~ x - 1 # linrear regresion without intercept
+
+log(y) ~ x1 + x2 # multiple regression of transformation variable, log(y), on x1 and x2 wth an implicit intercept term
+
+y ~ poly(x, 2)
+y ~ 1 + x + I(x^2)
+y ~ X + poly(x, 2)
+y ~ A
+y ~ A + x
+y ~ A*B
+ # and etc
+
+fitted.model <- lm(formula, data = data.frame);
+# generic functions for extracting model information
+
+add1
+deviance
+formula
+predict
+step
+alias
+drop1
+kappa
+print
+summary
+anova
+effects
+labels
+proj
+vcov
+coef
+family
+plot
+residuals
+
+
+new.model <- update(old.model, new.formula)
+
+
+# learn generalized linear models
+link functions etc
+
+
+
+
+
+# plotting
