@@ -277,6 +277,9 @@ residuals
 
 new.model <- update(old.model, new.formula)
 
+fm03 <- lm( y ~ x1 + x2 + x3, data = production)
+fm4 <- update(fm03, . ~ . + x4)
+smf4 <- update(fm4, sqrt(.) ~ .)
 
 # learn generalized linear models
 link functions etc
@@ -286,3 +289,59 @@ link functions etc
 
 
 # plotting
+par() # a function used to modify the list of graphics parameters for the current graphics device
+plot(x,y)
+plot(x)
+
+pairs(X) # X is a data frame
+coplot(a~b|c)
+coplot(a~b|c+d)
+qqnorm(x)
+qqline(x)
+qqplot(x,y)
+
+hist(x)
+hist(x, nclass=n)
+hist(x, breaks=b,...)
+dotchart(x,...)
+image(x,y,z,...)
+contour(x,y,z,...)
+persp(x,y,z,...)
+
+# plot arguments
+add = TRUE
+axes = FALSE
+log = "x"
+log = "xy"
+type = "p" or "l" or "b" # points or lines or points connected by lines
+type = "o" or "h" "s" "S" "n"
+
+xlab = string
+ylab = string
+main = string
+sub = string
+abline(a,b)
+abline(h=y)
+abline(v=x)
+abline(lm.obj)
+polygon(x,y,...)
+legend(x,y,legend,...)
+
+
+help(Hershey)
+locator()
+text(locator(1), "Outlier", adj=0)
+identify(x,y,labels)
+
+# learn to use ggplot2 package for plotting
+
+
+
+# packages
+library()
+library(randomForest)
+search() # to see what packages are installed
+help.start()
+
+
+
