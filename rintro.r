@@ -344,4 +344,51 @@ search() # to see what packages are installed
 help.start()
 
 
+# getting a mode of a categorical feature
+mymode <- function(x) as.numeric(table(x))[which.max(table(x))]
 
+# numeric to factor and then back to numeric
+# we cant just do as.numeric to the factor to get the actual value stored
+# in the vector, instead we get the index of the level that is in the vector.
+
+x = round(rnorm(100,sd=5))
+f = as.factor(x)
+y = as.numeric(f) # is not equal to x
+z = as.numeric(levels(f)[f]) # which is equal to x
+
+
+# must learn packages are ggplot2 and plyr
+
+
+
+
+
+# common functions
+with
+within
+which.max
+which
+round
+subset
+boxplot
+transform
+summarize
+length
+ddply
+par # set or query graphical parameters
+rep
+seq
+sample
+unique
+gl # to generate factors
+interaction # to get a factor which represent the interaction of given factors
+str # compactly display the structure of an arbitrary R object
+head
+tail
+ctabs
+table
+cbind
+rbind
+c
+image # display a color image
+print
